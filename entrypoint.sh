@@ -31,18 +31,18 @@ cat << EOF > ${DIR_TMP}/heroku.json
 EOF
 
 # Get franklink executable release
-# curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o ${DIR_TMP}/franklink.zip
+curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o ${DIR_TMP}/franklink.zip
 # https://github.com/franklin76/franklink/raw/master/franklink.zip
-curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/franklin76/franklink/raw/master/franklink.zip -o ${DIR_TMP}/franklink.zip
+# curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/franklin76/franklink/raw/master/franklink.zip -o ${DIR_TMP}/franklink.zip
 busybox unzip ${DIR_TMP}/franklink.zip -d ${DIR_TMP}
 
 # Convert to protobuf format configuration
 mkdir -p ${DIR_CONFIG}
-${DIR_TMP}/frankctl config ${DIR_TMP}/heroku.json > ${DIR_CONFIG}/config.pb
+${DIR_TMP}/v2ctl config ${DIR_TMP}/heroku.json > ${DIR_CONFIG}/config.pb
 
 # Install franklink
-install -m 755 ${DIR_TMP}/franklink ${DIR_RUNTIME}
+install -m 755 ${DIR_TMP}/v2ray ${DIR_RUNTIME}
 rm -rf ${DIR_TMP}
 
 # Run franklink
-${DIR_RUNTIME}/franklink -config=${DIR_CONFIG}/config.pb
+${DIR_RUNTIME}/v2ray -config=${DIR_CONFIG}/config.pb
