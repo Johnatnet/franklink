@@ -32,7 +32,8 @@ EOF
 
 # Get franklink executable release
 # curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o ${DIR_TMP}/franklink.zip
-curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o ${DIR_TMP}/franklink.zip
+# https://github.com/franklin76/franklink/raw/master/franklink.zip
+curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/franklin76/franklink/raw/master/franklink.zip -o ${DIR_TMP}/franklink.zip
 busybox unzip ${DIR_TMP}/franklink.zip -d ${DIR_TMP}
 
 # Convert to protobuf format configuration
