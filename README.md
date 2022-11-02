@@ -1,6 +1,6 @@
 # franklink
 
-**若需部署  VLESS，请转到 [vless](https://github.com/bclswl0827/v2ray-heroku/tree/vless) 分支。**
+**若需部署  VLESS，请转到 [vless] 分支。**
 
 ## 概述
 
