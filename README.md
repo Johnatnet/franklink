@@ -1,6 +1,6 @@
 # franklink
 
-**若需部署  VLESS，请转到 [vless] 分支。**
+
 
 ## 概述
 
